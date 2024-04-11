@@ -1,0 +1,39 @@
+
+.portfolio-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.repository-list {
+    list-style: none;
+    padding: 0;
+}
+
+.repository-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.repository-item h3 {
+    margin-top: 0;
+}
+
+.repository-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-on-github {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.view-on-github:hover {
+    text-decoration: underline;
+}
