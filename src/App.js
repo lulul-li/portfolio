@@ -1,88 +1,34 @@
 import './App.css';
-import Home from "./components/home";
-import Portfolio from "./components/portfolio";
-import {
-    createBrowserRouter,
-    RouterProvider,
-    NavLink,
-    Outlet,
-} from "react-router-dom";
-import About from "./components/about";
-import NavBar from "./components/navBar";
 
-const activeStyle = {
-    fontWeight: "bold",
+import About from "./Components/About";
+import {useEffect, useState} from "react";
+import JsonData from "./data/resumeData.json";
+import SmoothScroll from "smooth-scroll";
+import {Header} from "./Components/Header";
+import {Navigation} from "./Components/Navigation";
+import Portfolio from "./Components/Portfolio";
+import Footer from "./Components/Footer";
+export const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000,
+    speedAsDuration: true,
+});
 
-    color: "red",
-};
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root />,
-        children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/about",
-                element: <About />,
-            },
-            {
-                path: "/portfolio",
-                element: <Portfolio />,
-            },
-        ],
-    },
-]);
-function App() {
-    return <RouterProvider router={router} />;
-}
+const App = () => {
+    const [landingPageData, setLandingPageData] = useState({});
+    useEffect(() => {
+        setLandingPageData(JsonData);
+    }, []);
 
-export default App;
-function Root() {
     return (
         <div>
-            {
-                <NavBar />
-            }
-
-            <ul>
-                <li>
-                    {/* Navlink can be used to apply style to the link to the current route.*/}
-
-                    <NavLink
-                        to="/"
-
-                        // If the link is active, apply the activeStyle
-                        style={({ isActive }) => (isActive ? activeStyle : null)}
-
-                        Home
-                    />
-
-                </li>
-
-                <li>
-                    <NavLink
-                        to="/about"
-                        style={({ isActive }) => (isActive ? activeStyle : null)}
-                        About
-                        QUT
-                    />
-                </li>
-
-                <li>
-                    <NavLink
-                        to="/portfolio"
-                        style={({ isActive }) => (isActive ? activeStyle : null)}
-                        Portfolio
-                    />
-                </li>
-            </ul>
-
-            {/* Outlet is where the active route will be rendered */}
-
-            <Outlet />
+            <Navigation />
+            <Header data={landingPageData.Header} />
+            <About data={landingPageData.About} />
+            <Portfolio data={landingPageData.Portfolio} />
+            <Footer></Footer>
         </div>
     );
-}
+};
+
+export default App;
+
