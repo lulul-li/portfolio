@@ -19,13 +19,11 @@ import git from "../assets/techstack/git.png";
 import npm from "../assets/techstack/npm.png";
 import postman from "../assets/techstack/postman.png";
 import figma from "../assets/techstack/figma.png";
-// Porject Images
-import projectImage1 from "../assets/projects/project1.jpg";
-import projectImage2 from "../assets/projects/project2.jpg";
-import projectImage3 from "../assets/projects/project3.jpg";
-import projectImage4 from "../assets/projects/project4.jpg";
-import projectImage5 from "../assets/projects/project5.jpg";
-import projectImage6 from "../assets/projects/project6.jpg";
+import csharp from "../assets/techstack/c-sharp-c.svg";
+import flutter from "../assets/techstack/flutter.svg";
+import db from "../assets/techstack/database-sql.svg";
+import gcp from "../assets/techstack/gcp-color.svg";
+import vue from "../assets/techstack/vue.svg";
 
 // Logos
 export const logos = {
@@ -38,8 +36,13 @@ export const personalDetails = {
   name: "Wan RU Li",
   tagline: "I build things for web",
   img: profile,
-  about: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-};
+  about: `I'm currently pursuing a Master's degree in Information Technology at QUT, and I'm also actively engaged as a software developer. 
+My experience includes:
+- Developing modern applications using a variety of technologies such as C#, JavaScript, Vue.js , Flutter, and SQL Server.
+- Developing and maintaining large-scale online platforms and high-frequency trading systems.
+- Leveraging Cloud Foundry for efficient development on top of Kubernetes.
+- Streamlining the deployment process and enhancing software integration within the team by updating integration and deployment scripts, thus improving our continuous integration practices.
+- Collaborating with Product Managers to identify minimum viable product requirements and translating them into well-scoped user stories for individual team members.`};
 
 // Enter your Social Media URLs here
 export const socialMediaUrl = {
@@ -52,43 +55,43 @@ export const socialMediaUrl = {
 // Enter your Work Experience here
 export const workDetails = [
   {
-    Position: "Web Developer",
-    Company: `QUT Student`,
-    Location: "Brisbane",
+    Position: "Software Engineer",
+    Company: `Yuan-You`,
+    Location: "Remote work",
     Type: "Full Time",
-    Duration: "Feb 2023 - Dec 2024",
+    Duration: "May 2023 - Now",
   },
   {
-    Position: "Internship",
-    Company: `Company Name here`,
-    Location: "Bengaluru",
-    Type: "Internship",
-    Duration: "Sep 2021 - Dec 2021",
+    Position: "Senior Software Engineer",
+    Company: `Titansoft Pte Ltd`,
+    Location: "Taiwan",
+    Type: "Full Time",
+    Duration: "Aug 2015 - Sep 2022",
   },
   {
-    Position: "Internship",
-    Company: `Company Name here`,
-    Location: "Bengaluru",
+    Position: "Software Engineer Intern",
+    Company: `BUDDHIST TZU CHI GENERAL HOSPITAL`,
+    Location: "Taiwan",
     Type: "Internship",
-    Duration: "Sep 2021 - Dec 2021",
+    Duration: "Feb 2015 - Jun 2015",
   },
 ];
 
 // Enter your Education Details here
 export const eduDetails = [
   {
-    Position: "Frontend Development",
-    Company: "Udemy, YouTube, Google, Medium",
-    Location: "Online",
+    Position: "Master Information Technology",
+    Company: "Qut",
+    Location: "Brisbane",
     Type: "Full Time",
-    Duration: "Jan 2022 - Present",
+    Duration: "Feb 2023 - Present",
   },
   {
-    Position: "Bachelor in Electronics & Communication",
-    Company: `Your College Name here`,
-    Location: "Bengaluru",
+    Position: "Bachelor in Medical Informatics",
+    Company: `Tzu Chi University`,
+    Location: "Taiwan",
     Type: "Full Time",
-    Duration: "Aug 2020 - Present",
+    Duration: "Sep 2011 - Jun 2015",
   },
 ];
 
@@ -108,68 +111,15 @@ export const techStackDetails = {
   git: git,
   github: github,
   figma: figma,
+  csharp: csharp,
+  flutter:flutter,
+  vue: vue,
+  sql: db,
+  cloud:gcp
 };
 
-// Enter your Project Details here
-export const projectDetails = [
-  {
-    title: "Project title 1",
-    image: projectImage1,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Project title 2",
-    image: projectImage2,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Project title 3",
-    image: projectImage3,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Project title 4",
-    image: projectImage4,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Project title 5",
-    image: projectImage5,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
-  },
-  {
-    title: "Project title 6",
-    image: projectImage6,
-    description: `This is sample project description random things are here in description This is sample
-project lorem ipsum generator for dummy content`,
-    techstack: "HTML/CSS, JavaScript",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
-  },
-];
 
-// Enter your Contact Details here
 export const contactDetails = {
-  email: "hi@example.com",
-  phone: "+91 12345 67890",
+  email: "lulu.li820502@gmail.com",
+  phone: "+61 0435768184",
 };
