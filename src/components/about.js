@@ -1,38 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from "react";
+import Work from "../Components/Work";
+import { personalDetails, workDetails, eduDetails } from "../data/Details";
 
-const About = () => {
-    const [instagramPosts, setInstagramPosts] = useState([]);
-
-    useEffect(() => {
-        const fetchInstagramPosts = async () => {
-            try {
-                const response = await axios.get('https://graph.instagram.com/me/media?fields=id,media_url,caption&access_token=0b63505e1ecf9f194c5fb158b9e9cf33');
-                setInstagramPosts(response.data.data);
-            } catch (error) {
-                console.error('Error fetching Instagram posts:', error);
-            }
-        };
-
-        fetchInstagramPosts();
-    }, []);
-
-    return (
-        <div>
-            <h2>About Me</h2>
-            <p>Here's some information about me...</p>
-
-            <h3>My Latest Instagram Posts</h3>
-            <div className="instagram-posts">
-                {instagramPosts.map(post => (
-                    <div key={post.id} className="instagram-post">
-                        <img src={post.media_url} alt={post.caption} />
-                        <p>{post.caption}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+function About() {
+  return (
+    <main className="container mx-auto max-width pt-10 pb-20 ">
+      <section>
+        <h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
+          About Me
+        </h1>
+        <p className="text-content py-8 lg:max-w-3xl">{personalDetails.about}</p>
+      </section>
+      <section>
+        <h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
+          Work Experience
+        </h1>
+        {React.Children.toArray(
+          workDetails.map(({ Position, Company, Location, Type, Duration }) => (
+            <Work
+              position={Position}
+              company={Company}
+              location={Location}
+              type={Type}
+              duration={Duration}
+            />
+          ))
+        )}
+      </section>
+      <section>
+        <h1 className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
+          Education
+        </h1>
+        {React.Children.toArray(
+          eduDetails.map(({ Position, Company, Location, Type, Duration }) => (
+            <Work
+              position={Position}
+              company={Company}
+              location={Location}
+              type={Type}
+              duration={Duration}
+            />
+          ))
+        )}
+      </section>
+    </main>
+  );
 }
 
 export default About;

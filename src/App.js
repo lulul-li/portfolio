@@ -1,34 +1,22 @@
-import './App.css';
-
-import About from "./Components/About";
-import {useEffect, useState} from "react";
-import JsonData from "./data/resumeData.json";
-import SmoothScroll from "smooth-scroll";
-import {Header} from "./Components/Header";
-import {Navigation} from "./Components/Navigation";
-import Portfolio from "./Components/Portfolio";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-export const scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 1000,
-    speedAsDuration: true,
-});
-
-const App = () => {
-    const [landingPageData, setLandingPageData] = useState({});
-    useEffect(() => {
-        setLandingPageData(JsonData);
-    }, []);
-
+import Home from "./Components/Home";
+import About from "./Components/About";
+import Portfolio from "./Components/Portfolio";
+import Technologies from "./Components/Technologies";
+function App() {
     return (
-        <div>
-            <Navigation />
-            <Header data={landingPageData.Header} />
-            <About data={landingPageData.About} />
-            <Portfolio data={landingPageData.Portfolio} />
-            <Footer></Footer>
-        </div>
+        <Router>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Portfolio />} />
+                <Route path="/technologies" element={<Technologies />} />
+            </Routes>
+            <Footer />
+        </Router>
     );
-};
-
+}
 export default App;
-

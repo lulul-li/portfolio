@@ -18,25 +18,29 @@ const Portfolio = () => {
     }, []);
 
     return (
-        <div className="portfolio-container"> {/* Add a class for styling */}
-            <h2>My GitHub Repositories</h2>
-            <ul className="repository-list"> {/* Add a class for styling */}
-                {repositories.map(repo => (
-                    <li key={repo.id} className="repository-item"> {/* Add a class for styling */}
-                        <h3>{repo.name}</h3>
-                        <p>{repo.description}</p>
-                        <div className="repository-details"> {/* Add a class for styling */}
-                            <p>Language: {repo.language}</p>
-                            <p>Stars: {repo.stargazers_count}</p>
-                            <p>Forks: {repo.forks_count}</p>
-                        </div>
-                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="view-on-github"> {/* Add a class for styling */}
-                            View on GitHub
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <main className="container mx-auto max-width pt-10 mb-20">
+            <section>
+                <h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight font-bold">
+                    Projects
+                </h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
+                    {repositories.map(repo => (
+                        <li key={repo.id} className="repository-item"> {/* Add a class for styling */}
+                            <h3>{repo.name}</h3>
+                            <p>{repo.description}</p>
+                            <div className="repository-details"> {/* Add a class for styling */}
+                                <p>Language: {repo.language}</p>
+                                <p>Stars: {repo.stargazers_count}</p>
+                                <p>Forks: {repo.forks_count}</p>
+                            </div>
+                            <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="view-on-github"> {/* Add a class for styling */}
+                                View on GitHub
+                            </a>
+                        </li>
+                    ))}
+                </div>
+            </section>
+        </main>
     );
 }
 
