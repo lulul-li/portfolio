@@ -93,7 +93,7 @@ export const eduDetails = [
 ];
 
 // Enter your Education Details here
-export const skill = [
+export const skills = [
     {
         Title: "Application Development",
         Detail: "  Skilled in creating applications using a robust tech stack that includes C#, JavaScript, Vue.js, Flutter, and SQL Server"
@@ -111,8 +111,6 @@ export const skill = [
         Title: "Collaboration and Planning",
         Detail: "Worked closely with Product Managers to determine minimum viable product requirements, translating these into well-defined user stories for team members to execute effectively."
     }
-
-
 ];
 // Tech Stack and Tools
 export const techStackDetails = {
