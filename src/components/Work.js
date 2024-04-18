@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 function Work({ position, company, location, type, duration }) {
+  const containerStyle = {
+    width: '100px',
+    height: '100px'
+  };
+
+  const [mapPosition, setMapPosition] = useState({ lat: 24.163162, lng: 120.647828 }); // Default position set to Taichung
+  useEffect(() => {
+    async function getCoordinates(address) {
+      const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+      const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const { lat, lng } = data.results[0].geometry.location;
+        setMapPosition({ lat, lng });
+      } catch (error) {
+        console.error("Geocoding failed: ", error);
+      }
+    }
+
+    getCoordinates(location);
+  }, [location]);
+
   return (
     <article className="pt-8 border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20">
       <div className="flex justify-between items-center">
@@ -41,6 +66,17 @@ function Work({ position, company, location, type, duration }) {
           </div>
         </div>
         <p className="text-content text-xs md:text-sm font-light pl-1 min-w-fit">{duration}</p>
+      </div>
+      <div>
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+          <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={mapPosition}
+              zoom={15}
+          >
+            <Marker position={mapPosition} />
+          </GoogleMap>
+        </LoadScript>
       </div>
     </article>
   );
