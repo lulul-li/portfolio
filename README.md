@@ -70,7 +70,7 @@ This project is built using React. It follows a component-based architecture, wi
 
 ## Issue Reporting
 
-If you encounter any issues or have suggestions for improvement, please report them on the GitHub [issue tracker](link-to-issue-tracker).
+If you encounter any issues or have suggestions for improvement, please report them on the GitHub [issue tracker](https://github.com/lulul-li/portfolio/issues).
 
 ## License
 
