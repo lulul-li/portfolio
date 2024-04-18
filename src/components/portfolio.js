@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const Portfolio = () => {
     const [repositories, setRepositories] = useState([]);
@@ -8,8 +7,8 @@ const Portfolio = () => {
     useEffect(() => {
         const fetchRepositories = async () => {
             try {
-                const response = await axios.get('https://api.github.com/users/lulul-li/repos');
-                setRepositories(response.data);
+                const response = await fetch('https://api.github.com/users/lulul-li/repos');
+                setRepositories(await response.json());
             } catch (error) {
                 console.error('Error fetching repositories:', error);
             }
