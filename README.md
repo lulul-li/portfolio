@@ -25,18 +25,6 @@ This is a portfolio website created to showcase my work as a developer. It inclu
 - **Portfolio:** Showcase of my projects with descriptions and links to GitHub repositories or live demos.
 
 
-## How to Contribute
-
-Contributions to this project are welcome! Here's how you can contribute:
-
-1. Fork the repository.
-2. Create a new branch for your feature (`git checkout -b feature/new-feature`).
-3. Make your changes.
-4. Test your changes thoroughly.
-5. Commit your changes (`git commit -am 'Add new feature'`).
-6. Push to the branch (`git push origin feature/new-feature`).
-7. Create a new pull request.
-
 ## Dependencies
 
 This project relies on the following dependencies:
