@@ -6,7 +6,6 @@ Welcome to my portfolio website! This is where I showcase my projects, skills, a
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [How to Contribute](#how-to-contribute)
 - [Dependencies](#dependencies)
 - [Architecture](#architecture)
 - [Issue Reporting](#issue-reporting)

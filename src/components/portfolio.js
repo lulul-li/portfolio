@@ -3,14 +3,19 @@ import React, { useState, useEffect } from 'react';
 const Portfolio = () => {
     const [repositories, setRepositories] = useState([]);
     const [search, setSearch] = useState('');
+    const [Loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         const fetchRepositories = async () => {
+            setLoading(true);
             try {
                 const response = await fetch('https://api.github.com/users/lulul-li/repos');
                 setRepositories(await response.json());
             } catch (error) {
                 console.error('Error fetching repositories:', error);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -51,6 +56,8 @@ const Portfolio = () => {
                             required/>
 
                     </div>
+                {
+                    Loading?(<di>Loading.....</di>):
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
                     {filteredRepos.map(repo => (
@@ -75,6 +82,7 @@ const Portfolio = () => {
                         </div>
                     ))}
                 </div>
+                }
             </section>
         </main>
     );
